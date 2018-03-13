@@ -677,7 +677,7 @@ curl http://httpbin.org/image -H "Accept: image/webp" -v -o /dev/null
 curl http://httpbin.org/image -H "Accept: application/vnd.insa.tc" -v
 > GET /image HTTP/1.1
 > Host: httpbin.org
-> Accept: insa/tc/springbootintro <1>
+> Accept: application/vnd.insa.tc <1>
 >
 < HTTP/1.1 406 NOT ACCEPTABLE <2>
 < Content-Type: application/json <3>
