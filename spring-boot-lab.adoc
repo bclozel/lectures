@@ -737,6 +737,7 @@ First, we need an `Book` class:
 ----
 package fr.insalyon.tc.springbootintro;
 
+@SuppressWarnings("serial")
 public class Book {
     private Long id;
 
