@@ -1,0 +1,13 @@
+# Spring workshops
+:livebase: http://static.olivergierke.de/lectures
+
+This repository contains scripts and sample code for workshops.
+The content is written using http://asciidoctor.org[Asciidoctor] - feel free to submit
+issues and pull requests on https://github.com/bclozel/lectures/[the repository]. 
+
+
+## Spring Boot
+
+* `spring-boot-lab` - link:spring-boot-lab.html[Introduction to Spring Boot]
+* `spring-boot-hol` - link:spring-boot-hol.html[Spring Boot Hands-on Lab]
+
