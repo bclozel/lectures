@@ -807,7 +807,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/books") <2>
 public class BookController {
 
-  @GetMapping("/{isbn}") <3>
+	@GetMapping("/{isbn}") <3>
 	public Book findBook(@PathVariable String isbn) { <4>
 		Book algoDesign = new Book();
 		algoDesign.setIsbn(isbn);
