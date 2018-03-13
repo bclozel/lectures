@@ -917,17 +917,17 @@ public class Book {
     public void setVersion(String version) {
         this.version = version;
     }
-
+    
     @Override
     public String toString() {
         return "Book{" +
                 "isbn='" + isbn + '\'' +
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
+                ", version='" + version + '\'' +
                 '}';
     }
 }
-
 ----
 
 Instead of just returning the `Book` instance, we can return a `ResponseEntity`, which
