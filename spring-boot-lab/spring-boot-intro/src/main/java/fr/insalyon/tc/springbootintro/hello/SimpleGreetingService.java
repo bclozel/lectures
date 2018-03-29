@@ -2,7 +2,7 @@ package fr.insalyon.tc.springbootintro.hello;
 
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class SimpleGreetingService implements GreetingService {
 
 	@Override
