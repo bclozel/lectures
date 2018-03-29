@@ -8,7 +8,7 @@ public class SimpleGreetingServiceTests {
 
 	@Test
 	public void testGreeting() {
-		SimpleGreetingService greetingService = new SimpleGreetingService(null);
+		SimpleGreetingService greetingService = new SimpleGreetingService();
 		String message = greetingService.greet("Spring");
 		assertThat(message).isEqualTo("Hello, Spring!");
 	}
