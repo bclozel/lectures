@@ -511,19 +511,19 @@ import static org.springframework.web.servlet.mvc.method.annotation.MvcUriCompon
 @Controller <1>
 public class ShortURLController {
 
-  private final ShortURLService shortURLService;
+	private final ShortURLService shortURLService;
 
-  public ShortURLController(ShortURLService shortURLService) { <2>
-    this.shortURLService = shortURLService;
-  }
+	public ShortURLController(ShortURLService shortURLService) { <2>
+		this.shortURLService = shortURLService;
+	}
 
 	@PostMapping("/") <3>
 	public ResponseEntity shortenURL(@RequestParam URI uri) { <4>
 		ShortURL shortURL = this.shortURLService.shortenURL(uri);
-    URI shortenedURL = URI.parse("http://localhost:8080/" + shortURL.getShortCode());
-    // the host information is hard coded here for simplicity
-    // but you can do better with MvcUriComponentsBuilder::fromMethodCall
-		return ResponseEntity.created(shotenedURL).build(); <5>
+		URI shortenedURL = URI.create("http://localhost:8080/" + shortURL.getShortCode());
+		// the host information is hard coded here for simplicity
+		// but you can do better with MvcUriComponentsBuilder::fromMethodCall
+		return ResponseEntity.created(shortenedURL).build(); <5>
 	}
 
 }
