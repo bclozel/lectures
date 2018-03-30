@@ -7,11 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+@Service
 public class ShortURLService {
 
 	private static final String SPACE = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
 
 	private static final int BASE = SPACE.length();
+
+	private final Random random = new Random();
+
+	private final ShortURLRepository shortURLRepository;
+
+	@Autowired
+	public ShortURLService(ShortURLRepository shortURLRepository) {
+		this.shortURLRepository = shortURLRepository;
+	}
 
 	/**
 	 * Create a new {@link ShortURL} using the given URI and save it
@@ -23,8 +33,11 @@ public class ShortURLService {
 	public ShortURL shortenURL(URI uri) {
 		// TODO: create a ShortURL using a random positive integer
 		// use java.util.Random and java.util.Math for that
-
+		int randomNumber = Math.abs(this.random.nextInt());
+		String shortCode = encode(randomNumber);
+		ShortURL shortURL = new ShortURL(uri, shortCode);
 		// then persist that ShortURL into our database
+		return this.shortURLRepository.save(shortURL);
 	}
 
 	/**
