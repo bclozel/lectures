@@ -42,4 +42,10 @@ public class ShortURLController {
 				.location(shortURL.getUri()).build();
 	}
 
+	@GetMapping("/{shortCode}/info")
+	@ResponseBody
+	public ShortURL fetchShortURLInfo(@PathVariable String shortCode) {
+		return this.shortURLService.expandShortCode(shortCode);
+	}
+
 }
