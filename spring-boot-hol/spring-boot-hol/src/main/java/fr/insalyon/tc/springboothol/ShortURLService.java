@@ -51,6 +51,8 @@ public class ShortURLService {
 	public ShortURL expandShortCode(String shortCode) {
 		// TODO: find a ShortURL by its shortcode in the database and return it
 		// if there's none, throw a ShortCodeNotFoundException
+		return this.shortURLRepository.findByShortCode(shortCode)
+				.orElseThrow(() -> new ShortCodeNotFoundException(shortCode));
 	}
 
 	private static String encode(int num) {
