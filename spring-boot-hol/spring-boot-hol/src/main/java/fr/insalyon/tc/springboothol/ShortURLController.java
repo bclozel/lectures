@@ -35,4 +35,11 @@ public class ShortURLController {
 		return ResponseEntity.created(shortenedURL).build();
 	}
 
+	@GetMapping("/{shortCode}")
+	public ResponseEntity expandURL(@PathVariable String shortCode) {
+		ShortURL shortURL = this.shortURLService.expandShortCode(shortCode);
+		return ResponseEntity.status(HttpStatus.PERMANENT_REDIRECT)
+				.location(shortURL.getUri()).build();
+	}
+
 }
